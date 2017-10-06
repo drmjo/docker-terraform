@@ -1,0 +1,10 @@
+FROM hashicorp/terraform:light
+
+ARG TERRAFORM_USER=terr
+RUN adduser -D $TERRAFORM_USER
+
+WORKDIR /home/$TERRAFORM_USER/app
+
+USER $TERRAFORM_USER
+
+ENTRYPOINT ["/bin/sh"]

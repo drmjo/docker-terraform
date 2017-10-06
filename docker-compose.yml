@@ -1,0 +1,14 @@
+version: '3'
+services:
+  terraform:
+    image: mjo/terraform
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - TERRAFORM_USER=${TERRAFORM_USER}
+    volumes:
+      - ./:/home/${TERRAFORM_USER}/app
+    env_file:
+      - ./aws.env
+    tty: true

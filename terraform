@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export TERRAFORM_USER=`whoami`
+
+docker-compose -p terr $@
